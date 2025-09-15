@@ -3,7 +3,6 @@ import pandas as pd
 import numpy as np
 import joblib, json, os
 import requests
-import json
 
 st.set_page_config(page_title='UBI PoC Dashboard', layout='wide')
 MODEL_DIR = os.getenv('MODEL_DIR', 'models')
@@ -31,13 +30,13 @@ row = df.sample(1, random_state=1).iloc[0]
 with st.form('quote'):
     vals = {}
     for k in FEATURES:
-        vals[k] = st.number_imput(k, value=float(row[k]))
+        vals[k] = st.number_input(k, value=float(row[k]))
     submitted = st.form_submit_button('Score & Quote')
 
 if submitted:
     payload = {k: float(vals[k]) for k in FEATURES}
     try:
-        r = requests.post('https://localhost:8000/quote', json=payload, timeout=2)
+        r = requests.post('http://localhost:8000/quote', json=payload, timeout=2)
         st.write(r.json())
     except Exception:
         X1 = scaler.transform(np.array([[payload[k] for k in FEATURES]]))

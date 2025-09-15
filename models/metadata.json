@@ -1,0 +1,14 @@
+{
+  "features": [
+    "miles",
+    "night_miles",
+    "mean_speed",
+    "max_speed_over_limit",
+    "accel_events_per_100mi",
+    "brake_events_per_100mi",
+    "phone_use_ratio",
+    "rain_flag",
+    "incident_density"
+  ],
+  "val_auc": 0.576425
+}

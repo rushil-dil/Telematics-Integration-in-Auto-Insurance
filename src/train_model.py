@@ -26,7 +26,7 @@ X_train_s = scaler.fit_transform(X_train)
 X_val_s = scaler.transform(X_val)
 
 base = GradientBoostingClassifier(random_state=7)
-cal = CalibratedClassifierCV(base, method='isotonic', cv=3)
+cal = CalibratedClassifierCV(base, method='sigmoid', cv=3)
 cal.fit(X_train_s, y_train)
 
 val_proba = cal.predict_proba(X_val_s)[:,1]
