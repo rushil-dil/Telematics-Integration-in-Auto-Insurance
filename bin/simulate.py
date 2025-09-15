@@ -3,6 +3,12 @@ import numpy as np
 import pandas as pd
 from datetime import datetime, timedelta
 
+'''
+This script simulates trip data for drivers. If used properly, data can be replaced with real-world datasets.
+'''
+
+
+
 parser = argparse.ArgumentParser()
 parser.add_argument('--rows', type=int, default=20000)
 parser.add_argument('--seed', type=int, default=42)
