@@ -10,5 +10,5 @@
     "rain_flag",
     "incident_density"
   ],
-  "val_auc": 0.576425
+  "val_auc": 0.5584066174327081
 }
